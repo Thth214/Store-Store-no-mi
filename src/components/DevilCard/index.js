@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import {useNavigation} from '@react-navigation/native'
 
 const Area = styled.TouchableOpacity`
-background-color: #833200;
+background-color: black;
 margin-bottom: 20px;
 border-radius: 20px;
 padding: 15px;
@@ -39,9 +40,21 @@ const FruitCategory = styled.Text`
 font-size: 15px;
 color: #ffa214;
 `;
+
 const Card = ({data}) => {
+    const navigation = useNavigation();
+    const handleClick=()=>{
+        navigation.navigate('AkumaNoMi',{
+            id : data.id,
+            imagemFruta: data.imagemFruta,
+            nome: data.nome,
+            descricao: data.descricao,
+            preco: data.preco,
+            imagemUsuario: data.imagemUsuario
+        });
+    }
     return(
-        <Area>
+        <Area onPress={handleClick}>
             <Avatar source={{uri:data.imagemFruta}}/>
             <InfoArea>
                 <FruitName>{data.nome}</FruitName>

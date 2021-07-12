@@ -1,12 +1,12 @@
 import React from 'react'
-import {SafeAreaView ,Text} from 'react-native'
+import {Text} from 'react-native'
 import {Container} from './styles';
 
 const Home = () =>{
     return(
-        <SafeAreaView>
+        <Container>
             <Text>Treasure</Text>
-        </SafeAreaView>
+        </Container>
     );
 }
 

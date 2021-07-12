@@ -4,7 +4,8 @@ const Stack = createStackNavigator();
 import Preload from '../screens/Preload';
 import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
-import Tab from './Tab'
+import Tab from './Tab';
+import AkumaNoMi from '../screens/AkumaNoMi'
 export default() =>(
     <Stack.Navigator
     initialRouteName="Preload"
@@ -16,6 +17,7 @@ export default() =>(
         <Stack.Screen name="SignIn" component={SignIn}/>
         <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="Tab" component={Tab} />
+        <Stack.Screen name="AkumaNoMi" component={AkumaNoMi} />
         
     </Stack.Navigator>
 );

@@ -68,7 +68,7 @@ useEffect(() => {
         <Container>
             <Scroller>
                 <HeaderArea>
-                    <HeaderTitle numberOfLines={2}>Encontre A fruta Mais Adequada de Você</HeaderTitle>
+                    <HeaderTitle numberOfLines={2}>Encontre A fruta Mais Adequada Para Você</HeaderTitle>
                     <SearchButton onPress={() => navigation.navigate('Search')}>
                         <SearchIcon fill='#ff7314' />
                     </SearchButton> 
