@@ -1,14 +1,15 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import Main from './stacks/Main';
-import UserContextProvider from './contexts/userContext'
+import TreasureProvider from './contexts/TreasureProvider'
 const App = () =>{
   return (
-    <UserContextProvider>
+      <TreasureProvider>
       <NavigationContainer>
         <Main />
       </NavigationContainer>
-    </UserContextProvider>
+      </TreasureProvider>
+   
   );
 }
 export default App;

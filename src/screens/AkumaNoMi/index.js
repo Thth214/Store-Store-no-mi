@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import {Text} from 'react-native';
 import {
 Container,
@@ -24,11 +24,13 @@ import BackIcon from '../../assets/leftarrow.svg'
 import HeartIcon from '../../assets/heart.svg'
 import {useNavigation,useRoute} from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
+import TreasureContext from '../../contexts/TreasureContext'
 
 
 const AkumaNoMi = () =>{
     const navigation = useNavigation();
     const route = useRoute();
+    const {addItem} = useContext(TreasureContext);
 
     const handleBackClick = () =>{
         navigation.goBack();
@@ -60,7 +62,7 @@ const AkumaNoMi = () =>{
                     <DescriptionArea>
                         <DescriptionText>{fruitInfo.descricao}</DescriptionText>
                     </DescriptionArea>
-                    <TreasureArea>
+                    <TreasureArea onPress={()=>{addItem(fruitInfo)}}>
                         <TreasureItem>
                             <TreasureText>Adicionar Ao Tesouro !!!</TreasureText>
                             <TreasureInfo>

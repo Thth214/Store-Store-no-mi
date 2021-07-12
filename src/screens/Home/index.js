@@ -56,11 +56,10 @@ const Home = () => {
         await axios.get('https://api-akuma-no-mi.herokuapp.com/api/fruta?pagina=0&qtdRegistros=' + offset)
             .then((response) => {
                 SetOffset(offset + 3);
-                console.log(response.data)
                 SetList(response.data)
                 SetLoading(false);
             }).catch(function (error) {
-
+                console.log(console.error())
             });
     }
 
