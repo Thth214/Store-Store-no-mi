@@ -45,6 +45,7 @@ export const FruitInfoName = styled.Text`
     color: #d4af37;
     font-size: 18px;
     font-weight: bold;
+    margin-top: 25px;
     margin-bottom: 10px;
 `;
 export const FruitPreco = styled.Text`

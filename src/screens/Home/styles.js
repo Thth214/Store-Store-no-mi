@@ -51,3 +51,18 @@ export const ListArea = styled.View`
 margin-top: 30px;
 margin-bottom: 30px;
 `;
+export const MoreButton = styled.TouchableOpacity`
+padding: 17px;
+border-radius: 4px;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+position: absolute;
+bottom: 0;
+margin-left: 92px;
+`;
+export const MoreText = styled.Text`
+color: #800000;
+margin-bottom:10px;
+font-size: 15px;
+`;
