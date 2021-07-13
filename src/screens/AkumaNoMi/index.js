@@ -42,7 +42,8 @@ const AkumaNoMi = () =>{
         nome: route.params.nome,
         preco: route.params.preco,
         descricao: route.params.descricao,
-        imagemUsuario: route.params.imagemUsuario
+        imagemUsuario: route.params.imagemUsuario,
+        categoria: route.params.categoria
     });
     return(
         <Container>

@@ -5,8 +5,8 @@ const TreasureProvider=({children})=>{
     const[treasure,setTreasure] = useState([]);
 
     function addItem(fruta){
-      const {id, imagemFruta,nome,preco,descricao,imagemUsuario} = fruta;
-        setTreasure([...treasure,{id, imagemFruta,nome,preco,descricao,imagemUsuario}])
+      const {id, imagemFruta,nome,preco,descricao,imagemUsuario,categoria} = fruta;
+        setTreasure([...treasure,{id, imagemFruta,nome,preco,descricao,imagemUsuario,categoria}])
     }
 
     function removeItem(id) {

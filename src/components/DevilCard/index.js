@@ -50,7 +50,8 @@ const Card = ({data}) => {
             nome: data.nome,
             descricao: data.descricao,
             preco: data.preco,
-            imagemUsuario: data.imagemUsuario
+            imagemUsuario: data.imagemUsuario,
+            categoria:data.categoria
         });
     }
     return(

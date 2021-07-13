@@ -12,7 +12,7 @@ export default () => {
         if (token !== null) {
          
         } else {
-        navigation.navigate('Tab');
+        navigation.navigate('SignIn');
         }   
     }
     checkToken();
