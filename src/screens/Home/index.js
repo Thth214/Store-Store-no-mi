@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import { Platform } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import { request, PERMISSIONS } from 'react-native-permissions';
+import React,{useState,useEffect} from 'react'
+import {Platform} from 'react-native'
+import {useNavigation} from '@react-navigation/native'
+import{ request, PERMISSIONS} from 'react-native-permissions';
 import Geolocation from '@react-native-community/geolocation';
-import DevilCard from '../../components/DevilCard'; ` `
+import DevilCard from '../../components/DevilCard';` `
 import axios from 'axios'
 import {
-    Container,
-    Scroller,
-    HeaderArea,
-    HeaderTitle,
-    SearchButton,
-    LocationArea,
-    LocationInput,
-    LocationFinder,
-    LoadingIcon,
-    LoadingIcon2,
-    ListArea,
-    MoreButton,
-    MoreText
+Container,
+Scroller,
+HeaderArea,
+HeaderTitle,
+SearchButton,
+LocationArea,
+LocationInput,
+LocationFinder,
+LoadingIcon,
+ListArea,
+MoreButton,
+MoreText
 } from './styles';
 import SearchIcon from '../../assets/search.svg'
 import MapIcon from '../../assets/map.svg'
@@ -27,7 +26,6 @@ const Home = () => {
 
     const [list, SetList] = useState([]);
     const [loading, SetLoading] = useState(false);
-    const [loading2, SetLoading2] = useState(false);
     const [location, SetLocation] = useState();
     const [coords, SetCoords] = useState();
     const [offset, SetOffset] = useState(5);
@@ -54,13 +52,12 @@ const Home = () => {
     }
 
     const getFrutas = async () => {
-        SetLoading2(true)
+
         await axios.get('https://api-akuma-no-mi.herokuapp.com/api/fruta?pagina=0&qtdRegistros=' + offset)
             .then((response) => {
                 SetOffset(offset + 3);
                 SetList(response.data)
                 SetLoading(false);
-                SetLoading2(false);
             }).catch(function (error) {
                 console.log(console.error())
             });
@@ -94,16 +91,16 @@ const Home = () => {
                     ))}
                 </ListArea>
                 <MoreButton
-                    activeOpacity={0.9}
-                    onPress={getFrutas}
+                activeOpacity={0.9}
+                onPress={getFrutas}
                 >
-                    <MoreText >Carregar mais frutas</MoreText>
-                    {loading2 &&
-                        <LoadingIcon2
-                            color="#800000"
-                        />
-                    }
-                </MoreButton>
+                <MoreText >Carregar mais frutas</MoreText>
+                {loading ? (
+                    <ActivityIndicator
+                        color="#800000"
+                        style={{ marginLeft: 8 }} />
+                ) : null}
+            </MoreButton>
             </Scroller>
         </Container>
 

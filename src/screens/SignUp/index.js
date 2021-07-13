@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {ScrollView, Alert} from 'react-native';
+import {ScrollView} from 'react-native';
 import {
 Container,
 InputArea,
@@ -27,20 +27,17 @@ export default () => {
         routes:[{name:'SignIn'}]
     })
     }
-    const handleRegisterClick =async()=>{
-        await axios.post('https://api-akuma-no-mi.herokuapp.com/api/users',{
+    const handleRegisterClick =()=>{
+         axios.post('https://api-akuma-no-mi.herokuapp.com/api/users',{
       nome:`${name}`,
       usuario: `${ username }`,
       senha: `${password}`
       
         }).then((response) =>{
-            Alert.alert('Olá Pirata!', 'Você está oficialmente cadastrado em nossa aventura!!!')
-        navigation.navigate('SignIn');
 
         }).catch(function (error){
 
         })
-        
     }
     return (
         <Container>

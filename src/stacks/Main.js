@@ -6,7 +6,6 @@ import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import Tab from './Tab';
 import AkumaNoMi from '../screens/AkumaNoMi'
-import Checkout from '../screens/Checkout';
 export default() =>(
     <Stack.Navigator
     initialRouteName="Preload"
@@ -19,7 +18,6 @@ export default() =>(
         <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="Tab" component={Tab} />
         <Stack.Screen name="AkumaNoMi" component={AkumaNoMi} />
-        <Stack.Screen name="Checkout" component={Checkout} />
         
     </Stack.Navigator>
 );
